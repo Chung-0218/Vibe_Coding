@@ -1,0 +1,98 @@
+:root {
+  --ring: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+
+.chat-panel {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 1rem;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.message {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.message .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 0.75rem;
+}
+
+.message.user .avatar {
+  background: linear-gradient(45deg, #6366f1, #22d3ee);
+}
+
+.message.ai .avatar {
+  background: linear-gradient(45deg, #ec4899, #f59e0b);
+}
+
+.bubble {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  max-width: 80%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.message.user .bubble { background: #eef2ff; }
+.message.ai .bubble { background: #fff7ed; }
+
+.composer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.input {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 0.75rem 0.9rem;
+  border-radius: 0.75rem;
+}
+
+.input:focus { outline: none; box-shadow: var(--ring); border-color: #a5b4fc; }
+
+.btn { background: #f1f5f9; border-radius: 0.75rem; padding: 0.6rem 0.9rem; }
+.btn-primary { background: linear-gradient(135deg, #6366f1, #a855f7); color: white; border-radius: 0.75rem; padding: 0.6rem 0.9rem; }
+.btn-secondary { background: linear-gradient(135deg, #06b6d4, #60a5fa); color: white; border-radius: 0.75rem; padding: 0.6rem 0.9rem; }
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  padding: 1rem;
+}
+
+.card-title { font-weight: 700; margin-bottom: 0.5rem; background: linear-gradient(135deg,#111827,#6b7280); -webkit-background-clip:text; -webkit-text-fill-color: transparent; }
+
+.textarea {
+  width: 100%;
+  min-height: 96px;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.9rem;
+}
+.textarea:focus { outline: none; box-shadow: var(--ring); border-color: #a5b4fc; }
+
+.file-input { width: 100%; }
+.chip { background: #f5f3ff; padding: 0.4rem 0.75rem; border-radius: 999px; font-size: 0.85rem; }
+
+img#preview { max-height: 220px; object-fit: cover; }
+
+

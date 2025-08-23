@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Friends</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-pink-50">
+    <div class="mx-auto max-w-5xl py-8 px-4">
+      <header class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-pink-500 shadow-md"></div>
+          <h1 class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-pink-600">
+            AI Agent 친구
+          </h1>
+        </div>
+        <div class="text-sm text-gray-500">텍스트 · 음성 · 이미지</div>
+      </header>
+
+      <main class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <section class="lg:col-span-2">
+          <div id="chat" class="chat-panel">
+            <div id="messages" class="messages"></div>
+            <div class="composer">
+              <input id="textInput" class="input" placeholder="오늘 하루 어땠어? 하고 싶은 이야기 아무거나 괜찮아 :)" />
+              <button id="sendBtn" class="btn-primary">전송</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="space-y-6">
+          <div class="card">
+            <h2 class="card-title">음성으로 듣기</h2>
+            <div class="space-y-3">
+              <textarea id="ttsText" class="textarea" placeholder="듣고 싶은 내용을 적어줘"></textarea>
+              <button id="speakBtn" class="btn-secondary w-full">오디오 생성</button>
+              <audio id="audioPlayer" controls class="w-full mt-2"></audio>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">목소리로 말하기</h2>
+            <div class="space-y-3">
+              <button id="recBtn" class="btn w-full">🎙️ 녹음 시작</button>
+              <textarea id="sttResult" class="textarea" placeholder="여기에 전사(텍스트)가 나타납니다"></textarea>
+              <button id="sendFromSttBtn" class="btn-primary w-full">채팅으로 보내기</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">이미지와 함께</h2>
+            <div class="space-y-3">
+              <input id="imageFile" type="file" accept="image/*" class="file-input" />
+              <img id="preview" class="rounded-lg hidden" alt="preview" />
+              <input id="imageText" class="input" placeholder="이미지와 함께 나눌 이야기를 적어줘" />
+              <button id="imageSendBtn" class="btn w-full">이미지와 전송</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">추천 도우미</h2>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="chip" data-prompt="오늘 기분 전환에 좋은 취미 추천해줘">취미</button>
+              <button class="chip" data-prompt="서울 근교로 가볍게 나들이 갈만한 곳 추천해줘">나들이</button>
+              <button class="chip" data-prompt="든든하면서 건강한 저녁메뉴 추천해줘">음식</button>
+              <button class="chip" data-prompt="요즘 스트레스 풀기에 좋은 루틴 알려줘">루틴</button>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer class="mt-10 text-center text-xs text-gray-400">친구처럼 곁에 있는 AI — 따뜻한 공감과 실용적인 제안</footer>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+  </body>
+  </html>
+
+
