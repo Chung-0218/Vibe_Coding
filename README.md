@@ -1,6 +1,6 @@
 **99% made by Vibe Coding**  
 
-> GPT-5, Claude 4, Gemini 2.5 in Cursor AI  
+> GPT-5, Claude 4.5, Gemini 2.5 and Claude Code
 
 ---
 
